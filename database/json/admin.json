@@ -1,0 +1,44 @@
+[
+    {
+        "name":"Rohan Singh",
+        "email": "rohan@gmail.com",
+        "city": "Goa",
+        "age": 23,
+        "password": "Rohan@123"
+    },
+    {
+        "name":"Mohan Sharma",
+        "email": "sharma23@gmail.com",
+        "city": "Mumbai",
+        "age": 56,
+        "password": "mohansi@123"
+    },
+    {
+        "name":"Yuvraj Dohre",
+        "email": "yuvraj84@gmail.com",
+        "city": "Agra",
+        "age": 76,
+        "password": "dohre567"
+    },
+    {
+        "name":"Mandeep Singh",
+        "email": "mandeep97@gmail.com",
+        "city": "Pune",
+        "age": 34,
+        "password": "singhMandeep@123"
+    },
+    {
+        "name":"Abhay Verma",
+        "email": "verma12@gmail.com",
+        "city": "Kolkata",
+        "age": 36,
+        "password": "verma@564"
+    },
+    {
+        "name":"Mohnish Bhatiya",
+        "email": "bhatiya345@gmail.com",
+        "city": "Delhi",
+        "age": 56,
+        "password": "mohnish@123"
+    }
+]
