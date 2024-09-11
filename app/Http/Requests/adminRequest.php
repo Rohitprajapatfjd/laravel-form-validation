@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\Uppercase;
 use Illuminate\Foundation\Http\FormRequest;
 use Str;
 
@@ -23,7 +24,7 @@ class adminRequest extends FormRequest
     public function rules(): array
     {
         return [
-             'fullname'=>'required|min:4',
+             'fullname'=>'required',
              'email'=>'required|email',
              'city'=>'required',
              'password'=>'required|min:5',
@@ -52,11 +53,11 @@ class adminRequest extends FormRequest
         ];
     }
  
-     protected function prepareForValidation(): void {
-       $this->merge([
-               'fullname'=> Str::slug($this->fullname)
-       ]);
-     }
+    //  protected function prepareForValidation(): void {
+    //    $this->merge([
+    //            'fullname'=> Str::slug($this->fullname)
+    //    ]);
+    //  }
 
      //protected $stopOnFirstFailure = true;
    

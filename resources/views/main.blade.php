@@ -9,8 +9,18 @@ Wel Optimise Form with Validation
 
 @section('contains')
  <div class="d-flex justify-content-center my-3">
-    <a href="{{route('showAdd')}}" class="btn btn-success btn-md ">Add User</a>
+    <a href="{{route('crud.create')}}" class="btn btn-success btn-md ">Add User</a>
  </div>
+ @if (session('status'))
+ <div class="row justify-content-center">
+  <div class="col-5">
+    <div class="alert alert-success" role="alert">
+      {{session('status')}}
+    </div>
+  </div>
+ </div>
+ @endif
+ 
 <div class="mt-3 row justify-content-center">
     <div  class="col-sm-8">
         <table class="table table-secondary table-striped table-hover">
@@ -33,7 +43,7 @@ Wel Optimise Form with Validation
                     <td>{{$values->email}}</td>
                     <td>{{$values->city}}</td>
                     <td>{{$values->age}}</td>                  
-                    <td> <a href="#" class="btn btn-primary btn-sm ">Edit</a></td>                  
+                    <td> <a href="{{route('crud.edit',$values->id)}}" class="btn btn-primary btn-sm ">Edit</a></td>                  
                     <td> <a href="#" class="btn btn-danger btn-sm ">Delete</a></td>
                   </tr>
                 @empty

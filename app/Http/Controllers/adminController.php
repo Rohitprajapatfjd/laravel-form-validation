@@ -9,17 +9,24 @@ use Hash;
 use Illuminate\Http\Request;
 
 class adminController extends Controller
-{
+{ 
     public function showData(){
-        // $data = DB::table('admins')
-        //             ->paginate('5',['*'],'no');
+       
+        // $user = admin::chunk(3 ,function($data){
+        //         foreach ($data as $value) {
+        //             return $value;
+        //         }
+        // });
+            
+        $user =  admin::lazy();
 
-        $data = admin::paginate(5);
-         return view('main',['data'=>$data]);
+        return $user;
+
+      
     }
 
     public function showForm(){
-        return view('welcome');
+      
     }
 
     public function addUser(adminRequest $req){

@@ -10,7 +10,7 @@ Registration Form
 
 @section('contains')
 <div class="mt-3 row justify-content-center text-white">
-    <form class="col-sm-6 mt-3"  action="{{route('addUser')}}" method="POST">
+    <form class="col-sm-6 mt-3"  action="{{route('crud.store')}}" method="POST">
         @csrf
         <div class="form-floating mb-3 ">            
             <input type="text" class="form-control bg-secondary @error('fullname')  is-invalid  @enderror  " name="fullname" value="{{old('fullname')}}" id="floatingInput" placeholder="enter Name">
