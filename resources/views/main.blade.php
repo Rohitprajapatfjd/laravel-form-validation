@@ -19,6 +19,14 @@ Wel Optimise Form with Validation
     </div>
   </div>
  </div>
+ @elseif (session('delete'))
+ <div class="row justify-content-center">
+  <div class="col-5">
+    <div class="alert alert-danger" role="alert">
+      {{session('delete')}}
+    </div>
+  </div>
+ </div>
  @endif
  
 <div class="mt-3 row justify-content-center">
@@ -44,7 +52,7 @@ Wel Optimise Form with Validation
                     <td>{{$values->city}}</td>
                     <td>{{$values->age}}</td>                  
                     <td> <a href="{{route('crud.edit',$values->id)}}" class="btn btn-primary btn-sm ">Edit</a></td>                  
-                    <td> <a href="#" class="btn btn-danger btn-sm ">Delete</a></td>
+                    <td> <a href="{{route('deletes',$values->id)}}" class="btn btn-danger btn-sm ">Delete</a></td>
                   </tr>
                 @empty
                     <h1>Do Data Found</h1>

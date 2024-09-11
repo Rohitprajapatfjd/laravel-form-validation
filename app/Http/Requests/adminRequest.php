@@ -24,9 +24,9 @@ class adminRequest extends FormRequest
     public function rules(): array
     {
         return [
-             'fullname'=>'required',
+             'fullname'=>'required|alpha',
              'email'=>'required|email',
-             'city'=>'required',
+             'city'=>'required|alpha',
              'password'=>'required|min:5',
              'age'=>'required|between:18,60|numeric',
         ];

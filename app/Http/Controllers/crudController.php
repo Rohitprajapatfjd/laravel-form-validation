@@ -59,7 +59,7 @@ class crudController extends Controller
      */
     public function edit(int $id)
     {
-        $user = admin::find($id);
+        $user = admin::findOrFail($id);
 
         return view('edit', ['data' => $user]);
     }
@@ -69,7 +69,14 @@ class crudController extends Controller
      */
     public function update(Request $req, string $id)
     {
-        $user = admin::where('id',$id)
+        $req->validate([
+            'fullname' => 'required|string',
+            'email' => 'required|email',
+            'city' => 'required|alpha',
+             'age' => 'required|between:18,60|numeric',
+        ]);
+
+        $user = admin::where('id', $id)
             ->update([
                 'name' => $req->fullname,
                 'email' => $req->email,
@@ -86,8 +93,11 @@ class crudController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
-        //
+        $user = admin::destroy($id);
+        if ($user) {
+            return redirect()->route('crud.index')->with('delete', 'Delete Successfully');
+        }
     }
 }
